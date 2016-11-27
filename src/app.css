@@ -1,0 +1,10 @@
+.app {
+  padding : 15px;
+  background-color: #0d2c3d;
+  color: #ffffff;
+}
+
+nav {
+  display: inline-block;
+  margin-bottom: 15px;
+}

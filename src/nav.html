@@ -1,0 +1,7 @@
+<template>
+  <div class="btn-toolbar" role="toolbar">
+    <div class="btn-group" role="group" repeat.for="question of questions">
+      <button type="button" class="btn btn-${$index === $parent.currentQuestionIndex ? 'info' : 'default'}">${question.id}</button>
+    </div>
+  </div>
+</template>

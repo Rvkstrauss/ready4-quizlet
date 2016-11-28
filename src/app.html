@@ -1,20 +1,20 @@
 <template>
   <require from="./app.css"></require>
   <require from="./question"></require>
-  <require from="./nav"></require>
+  <require from="./navbar"></require>
   <require from="./results"></require>
-  
   <div class="app text-center">
     <div if.bind="currentQuestionIndex < questions.length">
-      <nav questions.bind="questions" 
-      current-question-index.bind="currentQuestionIndex"></nav>
-  
-      <question question.bind="questions[currentQuestionIndex]" 
-            answer-id.bind="answerIndex" next.trigger="next()"></question>
+      <navbar questions.bind="questions" current-question-index.bind="currentQuestionIndex">
+      </navbar>
+      <hr />
+      <question question.bind="questions[currentQuestionIndex]" chosen-answer-index.bind="chosenAnswerIndex" next.trigger="next()"></question>
     </div>
-            
+    <hr />
+
     <div if.bind="currentQuestionIndex === questions.length">
-      <results questions.bind="questions" chosen-answer-ids.bind="chosenAnswerIndices"></results>
+      <results questions.bind="questions" chosen-answer-indexes.bind="chosenAnswerIndexes"></results>
+      <hr />
       <button type="button" class="btn btn-default" click.trigger="startOver()">
         Start Over
       </button>

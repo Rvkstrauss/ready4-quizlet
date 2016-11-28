@@ -1,6 +1,6 @@
 import {bindable} from 'aurelia-framework';
 
-export class NavCustomElement {
+export class NavbarCustomElement {
   @bindable questions;
   @bindable currentQuestionIndex;
 }

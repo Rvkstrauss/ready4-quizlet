@@ -1,15 +1,17 @@
 <template>
-  <h3>${question.body}</h3>
-  <div class="text-left" repeat.for="choice of question.choices">
+  <p innerhtml.bind="question.question.body" ></p>
+  <div class="text-center" repeat.for="choice of question.choices">
     <label>
-      <input type="radio" value.bind="$index" checked.bind="answerId" />
-      ${choices[$index].body}
+      <input type="radio" value.bind="$index" checked.bind="chosenAnswerIndex" />
+     //should change answer choice color if radio button is selcted
+      <span innerhtml.bind="choice.body" class="rdo rdo-${$index === choices[$index] ? 'chosen' : 'default'}"></span>
     </label>
     <br>
   </div>
   <br>
-  <div class="text-center">
-    <button disabled.bind="!answerId" type="button" click.trigger="next()" class="btn btn-success">
+  <hr/>
+  <div>
+    <button disabled.bind="chosenAnswerIndex === undefined" type="button" click.trigger="next()" class="btn btn-success">
       Next
     </button>
   </div>

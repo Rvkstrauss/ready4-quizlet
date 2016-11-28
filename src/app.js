@@ -7,13 +7,13 @@ export class App {
   }
   
   next() {
-    this.chosenAnswerIndices.push(this.answerIndex);
+    this.chosenAnswerIndexes.push(this.chosenAnswerIndex);
     this.currentQuestionIndex++;
   }
   
   startOver() {
-    this.chosenAnswerIndices = [];
+    this.chosenAnswerIndexes = [];
     this.currentQuestionIndex = 0;
-    this.answerIndex = undefined;
+    this.chosenAnswerIndex = undefined;
   }
 }

@@ -3,7 +3,7 @@
   <div class="text-center" repeat.for="choice of question.choices">
     <label>
       <input type="radio" value.bind="$index" checked.bind="chosenAnswerIndex" />
-     //should change answer choice color if radio button is selcted
+     <!--should change answer choice color if radio button is selected-->
       <span innerhtml.bind="choice.body" class="rdo rdo-${$index === choices[$index] ? 'chosen' : 'default'}"></span>
     </label>
     <br>
